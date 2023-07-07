@@ -11,7 +11,7 @@ if (process.env.NODE_ENV !== 'production'){
 
 
 let mainWindow
-let newProductWindow
+let newWindow
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({})
@@ -29,21 +29,20 @@ app.on('ready', () => {
     })
 });
 
-function creadNewProductWindows(){
-    newProductWindow = new BrowserWindow({
-        width: 400,
-        height: 330,
-        title: 'Add a new prodcut'
+function createNewWindows(){
+    newWindow = new BrowserWindow({
+        title: 'Add a new prodcut',
+        width: 556
     })
-    newProductWindow.setMenu(null);
-    newProductWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'views/new-product.html'),
+    //newWindow.setMenu(null);
+    newWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'views/Add-info.html'),
         protocol: 'file',
         slashes: true
     }))
 
-    newProductWindow.on('close', () => {
-        newProductWindow = null;
+    newWindow.on('close', () => {
+        newWindow = null;
     })
 }
 
@@ -55,7 +54,7 @@ const templateMenu = [
                 label: 'Agregar ',
                 accelerator: 'Ctrl+N',
                 click(){
-                    creadNewProductWindows()
+                    createNewWindows()
                 }
             },
             {
@@ -86,6 +85,7 @@ if (process.env.NODE_ENV !== ' production'){
         submenu: [
             {
                 label: 'Show/Hide Dev Toils',
+                accelerator: 'Ctrl+A',
                 click(item, focusedwindows){
                     focusedwindows.toggleDevTools()
                 }
