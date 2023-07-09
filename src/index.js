@@ -37,6 +37,30 @@ connection.query('SELECT * FROM cargos', (err, results) => {
     }
   });
   
+//resepcion de los datos de l formulario.
+
+const http = require('http');
+const { procesarFormulario } = require('./backend/app.js');
+
+const server = http.createServer((req, res) => {
+    procesarFormulario(req, res);
+  
+    // Imprimir los datos en la consola
+    let body = '';
+    req.on('data', (chunk) => {
+      body += chunk;
+    });
+    req.on('end', () => {
+      console.log('Datos recibidos:', body);
+    });
+  });
+  
+  const port = 3000;
+  server.listen(port, () => {
+    console.log(`Servidor iniciado en http://localhost:${port}`);
+  });
+
+
 //----Creacion de las pagina web----
 
 if (process.env.NODE_ENV !== 'production'){
