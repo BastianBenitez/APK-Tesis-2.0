@@ -8,46 +8,40 @@
 </head>
 <body>
 
-    <form class="form">
+    <form class="form" action="http://localhost:3000/procesar_formulario" method="post">
         <div class="left-form">
-            <div class="flex">
-                <label>
-                    <input required="" placeholder="" type="text" class="input">
-                    <span>Nombres</span>
-                </label>
         
                 <label>
-                    <input required="" placeholder="" type="text" class="input">
-                    <span>Apellidos</span>
+                    <input required="" placeholder="" type="text" class="input" name="nombre">
+                    <span>Nombre Completo</span>
                 </label>
-            </div>
-            
+      
+                <label>
+                    <input required="" type="tel" placeholder="" class="input" name="rut">
+                    <span>Rut (sin puntos ni guion)</span>
+                </label>  
+                  
+                <label>
+                    <input required="" placeholder="" type="email" class="input" name="correo">
+                    <span>Correo electrónico</span>
+                </label>
+    
+                <label>
+                    <input required="" placeholder="" type="text" class="input" name="direccion">
+                    <span>Dirección</span>
+                </label> 
+              
             <label>
-                <input required="" type="tel" placeholder="" class="input">
-                <span>Rut (sin puntos ni guion)</span>
-            </label>  
-                    
-            <label>
-                <input required="" placeholder="" type="email" class="input">
-                <span>Correo electronico</span>
+                <input required="" type="tel" placeholder="" class="input" name="numero_contacto">
+                <span>Número de contacto</span>
             </label>
-
             <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>Direccion</span>
-            </label> 
-                
-            <label>
-                <input required="" type="tel" placeholder="" class="input">
-                <span>Numero de contacto</span>
-            </label>
-            <label>
-                <input required="" type="tel" placeholder="" class="input">
+                <input required="" type="tel" placeholder="" class="input" name="salario">
                 <span>Salario</span>
             </label>  
             <label>
-                <input required="" type="tel" placeholder="" class="input">
-                <span>Fecha Contratacion (dd-mm-aaaa)</span>
+                <input required="" type="tel" placeholder="" class="input" name="fecha_contratacion">
+                <span>Fecha Contratación (dd-mm-aaaa)</span>
             </label>
             <button class="fancy" href="#">
                 <span class="top-key"></span>
@@ -58,26 +52,25 @@
         </div>
         <div class="right-form">  
             <label for="opcion">Cargo</label>
-            <select id="opcion" name="opcion" class="custom-select">
-                <option value="opcion1">Supervisor</option>
+            <select id="opcion" name="cargo" class="custom-select">
+                <option value="1">Supervisor</option>
             </select>
             <label for="opcion">Departamento</label>
-            <select id="opcion" name="opcion" class="custom-select">
-                <option value="opcion1">Contabilidad</option>
+            <select id="opcion" name="departamento" class="custom-select">
+                <option value="1">Contabilidad</option>
             </select>
-
-            <label for="opcion">Sede</label>
-            <select id="opcion" name="opcion" class="custom-select">
-                <option value="opcion1">Santiago</option>
-            </select>
-
-            <label for="opcion">Proyecto</label>
-            <select id="opcion" name="opcion" class="custom-select">
-                <option value="opcion1">Construccion Constanera</option>
-            </select>
-        </div>  
         
-    </form>
+            <label for="opcion">Sede</label>
+            <select id="opcion" name="sede" class="custom-select">
+                <option value="1">Santiago</option>
+            </select>
+        
+            <label for="opcion">Proyecto</label>
+            <select id="opcion" name="proyecto" class="custom-select">
+                <option value="1">Construcción Costanera</option>
+            </select>
+        </div>
+      </form>
 
 </body>
 </html>
